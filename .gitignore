@@ -104,3 +104,6 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Firebase native plugins (large binary files)
+/[Aa]ssets/Firebase/Plugins/x86_64/
