@@ -1,3 +1,4 @@
+using System.Collections;
 using Firebase.Database;
 using PimDeWitte.UnityMainThreadDispatcher;
 using UnityEngine;
@@ -28,7 +29,6 @@ public class UserLogin : MonoBehaviour
         dispatcher = UnityMainThreadDispatcher.Instance();
     }
 
-    // 로그인 버튼에 연결
     public void OnClickLogin()
     {
         string nickName = NickNameInput.text.Trim();
@@ -81,16 +81,22 @@ public class UserLogin : MonoBehaviour
                         PlayerPrefs.SetString("UserNickName", nickName);
                         PlayerPrefs.Save();
 
-                        CheckText.text = "로그인 성공";
+                        CheckText.text = "로그인 완료";
 
                         if (LoadNextSceneAfterLogin)
                         {
-                            SceneManager.LoadScene(NextSceneName);
+                            StartCoroutine(LoadSceneDelay());
                         }
                     });
 
                     break;
                 }
             });
+    }
+
+    IEnumerator LoadSceneDelay()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(NextSceneName);
     }
 }

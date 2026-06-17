@@ -13,7 +13,7 @@ public class MarketManager : MonoBehaviour
     UnityMainThreadDispatcher dispatcher;
 
     [Header("Firebase")]
-    [SerializeField] string databaseUrl = "https://myproject-76240-default-rtdb.asia-southeast1.firebasedatabase.app/";
+    [SerializeField] string databaseUrl = "https://shingutest-18018-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
     [Header("UI - 코인 / 메시지")]
     [SerializeField] Text CoinText;
